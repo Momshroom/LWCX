@@ -187,6 +187,30 @@ protections:
         trapped_chest:
             enabled: true
             autoRegister: private
+        copper_chest:
+            enabled: true
+            autoRegister: private
+        exposed_copper_chest:
+            enabled: true
+            autoRegister: private
+        oxidized_copper_chest:
+            enabled: true
+            autoRegister: private
+        waxed_copper_chest:
+            enabled: true
+            autoRegister: private
+        waxed_exposed_copper_chest:
+            enabled: true
+            autoRegister: private
+        waxed_oxidized_copper_chest:
+            enabled: true
+            autoRegister: private
+        waxed_weathered_copper_chest:
+            enabled: true
+            autoRegister: private
+        weathered_copper_chest:
+            enabled: true
+            autoRegister: private
         furnace:
             enabled: true
             autoRegister: private
@@ -209,6 +233,48 @@ protections:
             enabled: true
             autoRegister: private
         lectern:
+            enabled: true
+            autoRegister: private
+        decorated_pot:
+            enabled: true
+            autoRegister: private
+        crafter:
+            enabled: true
+            autoRegister: private
+        acacia_shelf:
+            enabled: true
+            autoRegister: private
+        bamboo_shelf:
+            enabled: true
+            autoRegister: private
+        birch_shelf:
+            enabled: true
+            autoRegister: private
+        cherry_shelf:
+            enabled: true
+            autoRegister: private
+        crimson_shelf:
+            enabled: true
+            autoRegister: private
+        dark_oak_shelf:
+            enabled: true
+            autoRegister: private
+        jungle_shelf:
+            enabled: true
+            autoRegister: private
+        mangrove_shelf:
+            enabled: true
+            autoRegister: private
+        oak_shelf:
+            enabled: true
+            autoRegister: private
+        pale_oak_shelf:
+            enabled: true
+            autoRegister: private
+        spruce_shelf:
+            enabled: true
+            autoRegister: private
+        warped_shelf:
             enabled: true
             autoRegister: private
         shulker_box:
