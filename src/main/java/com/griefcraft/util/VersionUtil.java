@@ -9,6 +9,24 @@ import java.util.regex.Pattern;
 public class VersionUtil {
     private static final Pattern VERSION_PATTERN = Pattern.compile("(\\d+)\\.(\\d+)(\\.\\d+)?");
 
+    public static boolean isAtLeast(final int major, final int minor, final int patch) {
+        final String[] versionParts = getVersionParts(Bukkit.getVersion());
+        final int majorPart = Integer.parseInt(versionParts[0]);
+        if (majorPart > major) {
+            return true;
+        }
+        final int minorPart = Integer.parseInt(versionParts[1]);
+        if (majorPart == major && minorPart > minor) {
+            return true;
+        }
+        final int patchPart = Integer.parseInt(versionParts[2]);
+        return majorPart == major && minorPart == minor && patchPart >= patch;
+    }
+
+    public static boolean isAtLeast(final int major, final int minor) {
+        return isAtLeast(major, minor, -1);
+    }
+
     public static int getMajorVersion() {
         return Integer.parseInt(getVersionParts(Bukkit.getVersion())[0]);
     }

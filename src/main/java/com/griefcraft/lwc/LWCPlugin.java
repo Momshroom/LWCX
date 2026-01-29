@@ -517,7 +517,7 @@ public class LWCPlugin extends JavaPlugin {
         pluginManager.registerEvents(new LWCEntityListener(this), this);
         pluginManager.registerEvents(new LWCBlockListener(this), this);
         pluginManager.registerEvents(new LWCServerListener(this), this);
-        if (VersionUtil.getMinorVersion() > 13) {
+        if (VersionUtil.isAtLeast(1, 14)) {
             pluginManager.registerEvents(new LWC114Listener(), this);
         }
         if (Bukkit.getPluginManager().getPlugin("Towny") != null) {

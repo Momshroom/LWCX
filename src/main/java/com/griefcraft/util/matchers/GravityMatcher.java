@@ -57,28 +57,27 @@ public class GravityMatcher implements ProtectionFinder.Matcher {
                 Material.LIME_BANNER, Material.PINK_BANNER, Material.GRAY_BANNER, Material.LIGHT_GRAY_BANNER,
                 Material.CYAN_BANNER, Material.PURPLE_BANNER, Material.BLUE_BANNER, Material.BROWN_BANNER,
                 Material.GREEN_BANNER, Material.RED_BANNER, Material.BLACK_BANNER, Material.ARMOR_STAND);
-        if (VersionUtil.getMinorVersion() > 13) {
+        if (VersionUtil.isAtLeast(1, 14)) {
             PROTECTABLES_POSTS.addAll(EnumSet.of(Material.OAK_SIGN, Material.BIRCH_SIGN,
                     Material.SPRUCE_SIGN, Material.JUNGLE_SIGN, Material.ACACIA_SIGN, Material.DARK_OAK_SIGN));
         } else {
             PROTECTABLES_POSTS.add(Material.getMaterial("SIGN"));
         }
-        if (VersionUtil.getMinorVersion() > 15) {
+        if (VersionUtil.isAtLeast(1, 16)) {
             PROTECTABLES_POSTS.addAll(EnumSet.of(Material.CRIMSON_BUTTON, Material.WARPED_BUTTON,
                     Material.POLISHED_BLACKSTONE_BUTTON, Material.CRIMSON_PRESSURE_PLATE, Material.WARPED_PRESSURE_PLATE,
                     Material.POLISHED_BLACKSTONE_PRESSURE_PLATE, Material.CRIMSON_SIGN, Material.WARPED_SIGN));
         }
-        if (VersionUtil.getMinorVersion() > 18) {
+        if (VersionUtil.isAtLeast(1, 19)) {
             PROTECTABLES_POSTS.addAll(EnumSet.of(Material.MANGROVE_BUTTON, Material.MANGROVE_PRESSURE_PLATE,
                     Material.MANGROVE_SIGN));
         }
-        if (VersionUtil.getMinorVersion() > 19) {
+        if (VersionUtil.isAtLeast(1, 20)) {
             PROTECTABLES_POSTS.addAll(EnumSet.of(Material.BAMBOO_BUTTON, Material.BAMBOO_PRESSURE_PLATE,
                     Material.BAMBOO_SIGN, Material.CHERRY_BUTTON, Material.CHERRY_PRESSURE_PLATE,
                     Material.CHERRY_SIGN));
         }
-        if (VersionUtil.getMinorVersion() > 20) {
-            // Added in 1.21.4
+        if (VersionUtil.isAtLeast(1, 21, 4)) {
             Optional.ofNullable(Material.getMaterial("PALE_OAK_BUTTON")).ifPresent(PROTECTABLES_POSTS::add);
             Optional.ofNullable(Material.getMaterial("PALE_OAK_PRESSURE_PLATE")).ifPresent(PROTECTABLES_POSTS::add);
             Optional.ofNullable(Material.getMaterial("PALE_OAK_SIGN")).ifPresent(PROTECTABLES_POSTS::add);

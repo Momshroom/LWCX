@@ -58,24 +58,23 @@ public class WallMatcher implements ProtectionFinder.Matcher {
                 Material.LIGHT_GRAY_WALL_BANNER, Material.CYAN_WALL_BANNER, Material.PURPLE_WALL_BANNER,
                 Material.BLUE_WALL_BANNER, Material.BROWN_WALL_BANNER, Material.GREEN_WALL_BANNER,
                 Material.RED_WALL_BANNER, Material.BLACK_WALL_BANNER);
-        if (VersionUtil.getMinorVersion() > 13) {
+        if (VersionUtil.isAtLeast(1, 14)) {
             PROTECTABLES_WALL.addAll(EnumSet.of(Material.OAK_WALL_SIGN, Material.BIRCH_WALL_SIGN,
                     Material.SPRUCE_WALL_SIGN, Material.JUNGLE_WALL_SIGN, Material.ACACIA_WALL_SIGN,
                     Material.DARK_OAK_WALL_SIGN));
         } else {
             PROTECTABLES_WALL.add(Material.getMaterial("WALL_SIGN"));
         }
-        if (VersionUtil.getMinorVersion() > 15) {
+        if (VersionUtil.isAtLeast(1, 16)) {
             PROTECTABLES_WALL.addAll(EnumSet.of(Material.CRIMSON_WALL_SIGN, Material.WARPED_WALL_SIGN));
         }
-        if (VersionUtil.getMinorVersion() > 18) {
+        if (VersionUtil.isAtLeast(1, 19)) {
             PROTECTABLES_WALL.add(Material.MANGROVE_WALL_SIGN);
         }
-        if (VersionUtil.getMinorVersion() > 19) {
+        if (VersionUtil.isAtLeast(1, 20)) {
             PROTECTABLES_WALL.addAll(EnumSet.of(Material.BAMBOO_WALL_SIGN, Material.CHERRY_WALL_SIGN));
         }
-        if (VersionUtil.getMinorVersion() > 20) {
-            // Added in 1.21.4
+        if (VersionUtil.isAtLeast(1, 21, 4)) {
             Optional.ofNullable(Material.getMaterial("PALE_OAK_SIGN")).ifPresent(PROTECTABLES_WALL::add);
         }
     }
