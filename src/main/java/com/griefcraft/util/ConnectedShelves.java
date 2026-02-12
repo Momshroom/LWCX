@@ -3,6 +3,7 @@ package com.griefcraft.util;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Directional;
+import org.bukkit.block.data.SideChaining;
 import org.bukkit.block.data.type.Shelf;
 import org.jetbrains.annotations.Nullable;
 
@@ -86,7 +87,7 @@ public class ConnectedShelves {
         };
         if (adjacentFace != null) {
             final Block adjacent = block.getRelative(adjacentFace);
-            if (adjacent.getBlockData() instanceof Shelf shelf && shelf.getSideChain() != Shelf.SideChain.UNCONNECTED) {
+            if (adjacent.getBlockData() instanceof Shelf shelf && shelf.getSideChain() != SideChaining.ChainPart.UNCONNECTED) {
                 return adjacent;
             }
         }

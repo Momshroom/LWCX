@@ -83,8 +83,8 @@ import com.griefcraft.util.config.Configuration;
 import com.griefcraft.util.matchers.DoubleChestMatcher;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -233,7 +233,7 @@ public class LWC {
 
     /**
      * <p>Normalize a name to a more readable and usable form.</p>
-     *
+     * <p>
      * E.g sign_post/wall_sign = Sign, furnace/burning_furnace = Furnace,
      * iron_door_block = iron_door
      *
@@ -2059,7 +2059,7 @@ public class LWC {
         defaults.setOwner(senderId);
         defaults.setData(data);
         defaults.save();
-        if("-".equals(data)) {
+        if ("-".equals(data)) {
             defaultsCache.clear(sender);
             sendLocale(sender, "lwc.defaults.cleared");
         } else {
