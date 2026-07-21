@@ -40,7 +40,6 @@ import com.palmergames.bukkit.towny.TownySettings;
 import com.palmergames.bukkit.towny.event.PlotClearEvent;
 import com.palmergames.bukkit.towny.event.town.TownRuinedEvent;
 import com.palmergames.bukkit.towny.event.town.TownUnclaimEvent;
-import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.TownyPermission;
@@ -113,39 +112,13 @@ public class Towny extends JavaModule implements Listener {
                 continue;
             }
 
-            Block block = event.getProtection().getBlock();
-            if (TownyAPI.getInstance().isWilderness(block))
-            	return; // Return if we're in the wilderness.
-
-            Town town = TownyAPI.getInstance().getTown(block.getLocation());
-            TownBlock townBlock = TownyAPI.getInstance().getTownBlock(block.getLocation());
-            if (town == null || townBlock == null) {
-            	return;
+            Town town = TownyAPI.getInstance().getTown(permission.getName());
+            if (town == null) {
+                return;
             }
 
-            String ownerName = null;
-            if (townBlock.hasResident()) {
-            	try { // Get the name of the resident who personally owns the plot, if someone does own it personally.
-					ownerName = townBlock.getResident().getName();
-				} catch (NotRegisteredException ignored) {}
-            }
-
-            // Check if the player is a resident of said town, or should otherwise have permissions based on Towny's ruleset.
-            if (town.getMayor().getName().equalsIgnoreCase(player.getName())) {
-                // Town mayor
-                event.setAccess(Permission.Access.ADMIN);
-            } else if (townBlock.hasResident() && ownerName != null && ownerName.equals(player.getName())) {
-            	// Owns the plot personally (plot owner, embassy plot owner.)
-            	event.setAccess(Permission.Access.ADMIN);
-            } else if (PlayerCacheUtil.getCachePermission(player, block.getLocation(), block.getType(), TownyPermission.ActionType.DESTROY)) {
-                // Has access to destroy in this plot (and could break the chest if they wanted to for example.)
+            if (town.hasResident(player)) {
                 event.setAccess(Permission.Access.PLAYER);
-            } else if (town.hasResident(player.getName())) {
-                // Resident of the Town.
-                event.setAccess(Permission.Access.PLAYER);
-            } else {
-                // Doesn't meet any of the requirements.
-                event.setAccess(Permission.Access.NONE);
             }
         }
     }

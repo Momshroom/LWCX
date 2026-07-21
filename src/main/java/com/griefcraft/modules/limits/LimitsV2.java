@@ -113,7 +113,7 @@ public class LimitsV2 extends JavaModule {
             Material.PURPLE_SHULKER_BOX, Material.MAGENTA_SHULKER_BOX, Material.PINK_SHULKER_BOX);
 
     static {
-        if (VersionUtil.getMinorVersion() > 13) {
+        if (VersionUtil.isAtLeast(1, 14)) {
             SIGNS = EnumSet.of(Material.OAK_WALL_SIGN, Material.BIRCH_WALL_SIGN,
                     Material.SPRUCE_WALL_SIGN, Material.JUNGLE_WALL_SIGN, Material.ACACIA_WALL_SIGN,
                     Material.DARK_OAK_WALL_SIGN, Material.OAK_SIGN, Material.BIRCH_SIGN, Material.SPRUCE_SIGN,

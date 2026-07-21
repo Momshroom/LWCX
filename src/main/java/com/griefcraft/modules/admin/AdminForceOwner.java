@@ -166,6 +166,7 @@ public class AdminForceOwner extends JavaModule {
             action.setData(newOwner);
         }
 
+        player.removeAllActions();
         player.addAction(action);
 
         lwc.sendLocale(sender, "protection.admin.forceowner.finalize", "player", newOwner);
