@@ -99,6 +99,10 @@ public class Towny extends JavaModule implements Listener {
             return;
         }
 
+        if (protection == null) {
+            return;
+        }
+
         if (protection.getType() != Protection.Type.PRIVATE) {
             return;
         }
