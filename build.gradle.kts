@@ -3,7 +3,7 @@ import java.util.*
 plugins {
     id("java-library")
     id("maven-publish")
-    id("io.github.goooler.shadow") version "8.1.7"
+    id("com.gradleup.shadow") version "9.6.1"
 }
 
 java {
